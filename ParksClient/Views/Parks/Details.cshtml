@@ -1,0 +1,13 @@
+@{
+  ViewData["Title"] = "Parks";
+}
+
+<h1>All About @Model.Name</h1>
+<p><strong>Location:</strong> @Model.Location</p>
+<p><strong>Description:</strong> @Model.Description</p>
+<p><strong>Interesting Facts:</strong> @Model.InterestingFacts</p>
+<p><strong>Popular Sights:</strong> @Model.PopularSights</p>
+
+<p>@Html.ActionLink("Edit details", "Edit", new { id = @Model.ParkId })</p>
+<p>@Html.ActionLink("Delete park", "Delete", new { id = @Model.ParkId })</p>
+<p>@Html.ActionLink("Return to all parks", "Index")</p>

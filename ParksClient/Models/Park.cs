@@ -3,7 +3,7 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Parks.Models
+namespace ParksClient.Models
 {
   public class Park
   {
@@ -51,17 +51,6 @@ namespace Parks.Models
     public static void Delete (int id)
     {
       ApiHelper.Delete(id);
-    }
-
-    public static List<Park> GetParks(int page)
-    {
-      var apiCallTask = ApiHelper.GetParks(page);
-      var result = apiCallTask.Result;
-
-      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-      List<Park> parkList = JsonConvert.DeserializeObject<List<Park>>(jsonResponse.ToString());
-
-      return parkList;
     }
   }
 }

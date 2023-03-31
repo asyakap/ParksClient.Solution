@@ -1,0 +1,32 @@
+@{
+  ViewData["Title"] = $"Edit {Model.Name}";
+}
+
+@model ParksClient.Models.Park
+
+<h4>Edit @Model.Name</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.PlanetId)
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { @Value = Model.Name})
+  <br>
+  @Html.LabelFor(model => model.Location)
+  @Html.TextBoxFor(model => model.Location, new { @Value = Model.Location})
+  <br>
+  @Html.LabelFor(model => model.Details) 
+  @Html.TextBoxFor(model => model.Details, new { @Value = Model.Details})
+  <br>
+  @Html.LabelFor(model => model.InterestingFacts)
+  @Html.TextBoxFor(model => model.InterestingFacts, new { @Value = Model.InterestingFacts})
+  <br>
+  @Html.LabelFor(model => model.PopularSights)
+  @Html.TextBoxFor(model => model.PopularSights, new { @Value = Model.PopularSights })
+  <br>
+  <br>
+  <input type="submit" value="Save" class="btn btn-primary"/>
+}
+
+<br>
+<p>@Html.ActionLink("Back to details", "Details", new {id = @Model.PlanetId})</p>
