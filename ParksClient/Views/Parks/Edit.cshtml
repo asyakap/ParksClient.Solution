@@ -8,15 +8,15 @@
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.PlanetId)
+  @Html.HiddenFor(model => model.ParkId)
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name, new { @Value = Model.Name})
   <br>
   @Html.LabelFor(model => model.Location)
   @Html.TextBoxFor(model => model.Location, new { @Value = Model.Location})
   <br>
-  @Html.LabelFor(model => model.Details) 
-  @Html.TextBoxFor(model => model.Details, new { @Value = Model.Details})
+  @Html.LabelFor(model => model.Description) 
+  @Html.TextBoxFor(model => model.Description, new { @Value = Model.Description})
   <br>
   @Html.LabelFor(model => model.InterestingFacts)
   @Html.TextBoxFor(model => model.InterestingFacts, new { @Value = Model.InterestingFacts})
@@ -29,4 +29,4 @@
 }
 
 <br>
-<p>@Html.ActionLink("Back to details", "Details", new {id = @Model.PlanetId})</p>
+<p>@Html.ActionLink("Back to details", "Details", new {id = @Model.ParkId})</p>
