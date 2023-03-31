@@ -33,7 +33,7 @@ namespace ParksClient.Models
     public static async void Put(int id, string newPark)
     {
       RestClient client = new RestClient("http://localhost:5000/");
-      RestRequest request = new RestRequest($"api/parkss/{id}", Method.Put);
+      RestRequest request = new RestRequest($"api/parks/{id}", Method.Put);
       request.AddHeader("Content-Type", "application/json");
       request.AddJsonBody(newPark);
       await client.PutAsync(request);
