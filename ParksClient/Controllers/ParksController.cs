@@ -62,7 +62,7 @@ public class ParksController : Controller
   public IActionResult Search(string name)
   {
     List<Park> parks = Park.GetParks();
-    List<Park> result = parks.FindAll(park => park.Name.ToLower().Equals(name.ToLower()));
+    List<Park> result = parks.FindAll(park => park.Name.ToLower().Contains(name.ToLower()));
     return View(result);
   }
 
