@@ -48,7 +48,7 @@ namespace ParksClient.Models
       ApiHelper.Put(park.ParkId, jsonPark);
     }
 
-    public static void Delete (int id)
+    public static void Delete(int id)
     {
       ApiHelper.Delete(id);
     }

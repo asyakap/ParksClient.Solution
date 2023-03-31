@@ -51,7 +51,7 @@ public class ParksController: Controller
     return View(park);
   }
 
-  [HttpGet, ActionName("Delete")]
+  [HttpPost, ActionName("Delete")]
   public ActionResult DeleteConfirmed(int id)
   {
     Park.Delete(id);
@@ -59,3 +59,4 @@ public class ParksController: Controller
   }
 
 }
+
