@@ -3,17 +3,24 @@
 }
 
 <div class="container">
-  <h1>All Parks:</h1>
+  <h2>All Parks:</h2>
   
-  <h3>Action:</h3>
+  <h4>Action:</h4>
   <p>@Html.ActionLink("Add a new park, and park info", "Create")</p>
   
-  <h3>Parks:</h3>
+  <h4>Parks:</h4>
   <ol>
     @foreach (Park park in Model)
     {
-      <li><strong><a href="/Parks/Details/@(park.ParkId)">@park.Name</a></strong>: @park.Location |</li>
+      <li><a href="/Parks/Details/@(park.ParkId)">@park.Name</a> - @park.Location</li>
     }
   </ol>
+
+  @using (Html.BeginForm("Search", "Parks")) {
+  <label class="mdl-textfield__label" for="sample3">Search Parks By Name:</label>
+  <br>
+  <input class="mdl-textfield__input" type="text" name="name" id="sample3"><br><br>
+  <input type="submit" name = "name" value="Search"/>
+  }
 
 </div>

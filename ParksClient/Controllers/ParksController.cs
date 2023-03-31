@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace ParksClient.Controllers;
 
-public class ParksController: Controller
+public class ParksController : Controller
 {
   public IActionResult Index()
   {
@@ -56,6 +56,14 @@ public class ParksController: Controller
   {
     Park.Delete(id);
     return RedirectToAction("Index");
+  }
+
+  [HttpPost, ActionName("Search")]
+  public IActionResult Search(string name)
+  {
+    List<Park> parks = Park.GetParks();
+    List<Park> result = parks.FindAll(park => park.Name.ToLower().Equals(name.ToLower()));
+    return View(result);
   }
 
 }

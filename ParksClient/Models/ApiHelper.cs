@@ -47,5 +47,13 @@ namespace ParksClient.Models
       await client.DeleteAsync(request);
     }
 
+    public static async Task<string> Search(string name)
+    {
+      RestClient client = new RestClient("http://localhost:5000/");
+      RestRequest request = new RestRequest($"api/parks", Method.Get);
+      RestResponse response = await client.GetAsync(request);
+      return response.Content;
+    }
+
   }
 }
